@@ -3,16 +3,24 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { SecondPageComponent } from './components/second-page/second-page.component';
+import { FirstPageComponent } from './components/first-page/first-page.component';
+import { HelloService } from '../_services/hello.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FirstPageComponent,
+    SecondPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [HelloService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
